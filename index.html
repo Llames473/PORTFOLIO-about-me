@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emil Llames | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #eaf6ff;
+            color: #17314a;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .site-header {
+            padding: 14px 0;
+            background-color: #173b5b;
+            color: #f5fbff;
+            border-bottom: 3px solid #2b6187;
+        }
+
+        .nav-wrap {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+        }
+
+        .brand {
+            color: #f5fbff;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .brand span {
+            color: #b2e64c;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            margin-left: 22px;
+            color: #e0f1ff;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #c5f36b;
+        }
+
+        .me {
+            position: relative;
+            display: grid;
+            min-height: 760px;
+            background-image: url("images/portbg.svg");
+            background-position: center;
+            background-size: cover;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        .hearts {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            opacity: 0.85;
+            filter: drop-shadow(2px 3px 0 rgba(23, 49, 74, 0.8));
+            animation: floatHeart 5s ease-in-out infinite, glowHeart 3s ease-in-out infinite;
+        }
+
+        .heart-one {
+            top: 18%;
+            left: 9%;
+            width: 30px;
+            animation-delay: -1s;
+        }
+
+        .heart-two {
+            top: 24%;
+            right: 10%;
+            width: 38px;
+            animation-delay: -3s;
+        }
+
+        .heart-three {
+            top: 47%;
+            left: 7%;
+            width: 25px;
+            animation-delay: -2s;
+        }
+
+        .heart-four {
+            top: 56%;
+            right: 8%;
+            width: 31px;
+            animation-delay: -4s;
+        }
+
+        .heart-five {
+            top: 68%;
+            left: 20%;
+            width: 27px;
+            animation-delay: -2.5s;
+        }
+
+        .heart-six {
+            top: 72%;
+            right: 21%;
+            width: 23px;
+            animation-delay: -1.5s;
+        }
+
+        .heart-seven {
+            top: 34%;
+            right: 24%;
+            width: 22px;
+            animation-delay: -3.5s;
+        }
+
+        .intro {
+            position: relative;
+            z-index: 1;
+            width: 90%;
+            max-width: 850px;
+            padding: 95px 0 250px;
+            text-align: center;
+        }
+
+        .student {
+            display: inline-block;
+            margin: 0 0 14px;
+            padding: 7px 14px;
+            background-color: #173b5b;
+            color: #d9f5ff;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: 2px solid #b2e64c;
+            border-radius: 4px;
+        }
+
+        .me h1 {
+            margin: 0 0 18px;
+            color: #f4fbff;
+            font-family: "Pixelify Sans", sans-serif;
+            font-size: 76px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            text-shadow: 4px 4px 0 #3d8dc1, 8px 8px 0 #245b8a;
+            animation: moveTitle 3s ease-in-out infinite;
+        }
+
+        /* The title gently moves up and down using CSS only. */
+        @keyframes moveTitle {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-14px);
+            }
+        }
+
+        @keyframes floatHeart {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-24px);
+            }
+        }
+
+        @keyframes glowHeart {
+            0%, 100% {
+                opacity: 0.7;
+                filter: drop-shadow(0 0 3px rgba(255, 70, 80, 0.35)) drop-shadow(2px 3px 0 rgba(23, 49, 74, 0.8));
+            }
+
+            50% {
+                opacity: 1;
+                filter: drop-shadow(0 0 10px rgba(255, 70, 80, 0.75)) drop-shadow(2px 3px 0 rgba(23, 49, 74, 0.8));
+            }
+        }
+
+        .text {
+            max-width: 620px;
+            margin: 0 auto;
+            padding: 12px 18px;
+            background-color: rgba(23, 59, 91, 0.86);
+            color: #f5fbff;
+            border: 2px solid rgba(255, 255, 255, 0.65);
+            border-radius: 4px;
+        }
+
+        .buttons {
+            margin-top: 22px;
+        }
+
+        .pixel-button {
+            display: inline-block;
+            margin: 0 8px 10px;
+            padding: 10px 22px;
+            background-color: #78a946;
+            color: #ffffff;
+            font-family: "Pixelify Sans", sans-serif;
+            font-size: 17px;
+            text-decoration: none;
+            border: 3px solid #416d30;
+            box-shadow: 4px 4px 0 #244d2e;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        .pixel-button:hover {
+            background-color: #8abd52;
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #244d2e;
+        }
+
+        .people {
+            position: absolute;
+            right: 0;
+            bottom: 24px;
+            left: 0;
+            width: 90%;
+            max-width: 900px;
+            height: 235px;
+            margin: 0 auto;
+            pointer-events: none;
+        }
+
+        .mypic {
+            position: absolute;
+            bottom: 0;
+            height: 225px;
+            width: auto;
+            filter: drop-shadow(3px 4px 0 rgba(29, 58, 49, 0.35));
+        }
+
+        .whiteme {
+            left: 12%;
+        }
+
+        .brownme {
+            right: 12%;
+        }
+
+        .section {
+            padding: 68px 0 74px;
+        }
+
+        .projects-section {
+            background-color: #e2f0d2;
+            border-top: 3px solid #9bc46e;
+        }
+
+        .section-heading {
+            margin-bottom: 26px;
+        }
+
+        .small-title {
+            margin: 0 0 5px;
+            color: #517832;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin: 0 0 8px;
+            color: #173b5b;
+            font-size: 38px;
+            line-height: 1.2;
+        }
+
+        .section-heading p:last-child {
+            max-width: 620px;
+            margin: 0;
+            color: #526677;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .skill-card,
+        .project-card {
+            background-color: #ffffff;
+            border: 2px solid #b6d5e6;
+            border-radius: 4px;
+            box-shadow: 5px 5px 0 #c4dbe7;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .skill-card:hover,
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 7px 9px 0 #a9c9d9;
+        }
+
+        .skill-card {
+            padding: 16px;
+        }
+
+        .skill-icons {
+            min-height: 52px;
+        }
+
+        .skill-icon {
+            width: 44px;
+            height: 44px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .skill-card h3,
+        .project-card h3 {
+            margin: 12px 0 7px;
+            color: #365e2d;
+            font-size: 21px;
+        }
+
+        .skill-card p,
+        .project-card p {
+            margin: 0;
+            color: #526677;
+        }
+
+        .project-card {
+            overflow: hidden;
+        }
+
+        .project-image-link,
+        .project-image-wrap {
+            display: block;
+            height: 240px;
+            overflow: hidden;
+        }
+
+        .project-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.03);
+        }
+
+        .project-copy {
+            padding: 18px 22px 23px;
+        }
+
+        .project-copy h3 {
+            margin-top: 0;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 14px;
+            color: #315f8a;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            padding: 20px 0;
+            background-color: #173b5b;
+            color: #e2f1fc;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        a:focus-visible {
+            outline: 3px solid #567c34;
+            outline-offset: 4px;
+        }
+
+        @media only screen and (max-width: 760px) {
+            .nav-wrap {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .nav-links a {
+                margin: 0 8px;
+            }
+
+            .me {
+                min-height: 740px;
+                background-position: center;
+            }
+
+            .intro {
+                padding: 70px 0 245px;
+            }
+
+            .me h1 {
+                font-size: 48px;
+                text-shadow: 3px 3px 0 #3d8dc1, 5px 5px 0 #245b8a;
+            }
+
+            .text {
+                font-size: 14px;
+            }
+
+            .people {
+                bottom: 18px;
+                height: 185px;
+            }
+
+            .heart {
+                width: 24px;
+            }
+
+            .heart-two,
+            .heart-six {
+                width: 28px;
+            }
+
+            .mypic {
+                height: 175px;
+            }
+
+            .whiteme {
+                left: 5%;
+            }
+
+            .brownme {
+                right: 5%;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+
+            .section-heading h2 {
+                font-size: 32px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .project-image-link,
+            .project-image-wrap {
+                height: 210px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .pixel-button,
+            .skill-card,
+            .project-card,
+            .project-image {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-wrap container">
+            <a class="brand" href="index.html">EMIL<span>.</span></a>
+            <div class="nav-links">
+                <a class="active" href="index.html">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="aboutme.html">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="me">
+            <div class="hearts" aria-hidden="true">
+                <img class="heart heart-one" src="images/heart.svg" alt="">
+                <img class="heart heart-two" src="images/heart.svg" alt="">
+                <img class="heart heart-three" src="images/heart.svg" alt="">
+                <img class="heart heart-four" src="images/heart.svg" alt="">
+                <img class="heart heart-five" src="images/heart.svg" alt="">
+                <img class="heart heart-six" src="images/heart.svg" alt="">
+                <img class="heart heart-seven" src="images/heart.svg" alt="">
+            </div>
+
+            <div class="intro">
+                <p class="student">BSIS Student</p>
+                <h1>Hi, I’m<br>Emil Llames.</h1>
+                <p class="text">I’m studying BSIS and learning HTML and CSS. I make small websites for practice.</p>
+                <div class="buttons">
+                    <a class="pixel-button" href="#projects">My Projects</a>
+                    <a class="pixel-button" href="aboutme.html">About Me</a>
+                </div>
+            </div>
+
+            <div class="people" aria-hidden="true">
+                <img class="mypic whiteme" src="images/whiteme.svg" alt="">
+                <img class="mypic brownme" src="images/brownme.svg" alt="">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="small-title">What I’m learning</p>
+                    <h2>My skills</h2>
+                    <p>I practice new skills by making small websites and school projects.</p>
+                </div>
+
+                <div class="card-grid">
+                    <article class="skill-card">
+                        <div class="skill-icons">
+                            <img class="skill-icon" src="images/html.png" alt="">
+                            <img class="skill-icon" src="images/css.png" alt="">
+                        </div>
+                        <h3>Technical Skills</h3>
+                        <p>Basic HTML and CSS, plus Word, Excel, and PowerPoint.</p>
+                    </article>
+
+                    <article class="skill-card">
+                        <h3>Soft Skills</h3>
+                        <p>Teamwork, communication, time management, and willingness to learn.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section projects-section" id="projects">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="small-title">Selected work</p>
+                    <h2>Projects I’ve made</h2>
+                    <p>A few projects I’ve worked on while learning.</p>
+                </div>
+
+                <div class="card-grid">
+                    <article class="project-card">
+                        <div class="project-image-wrap">
+                            <img class="project-image" src="images/login.png" alt="Preview of my login page project">
+                        </div>
+                        <div class="project-copy">
+                            <h3>Login Page</h3>
+                            <p>A login page I made for practice.</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <a class="project-image-link" href="https://llames473.github.io/Countdown-timer/">
+                            <img class="project-image" src="images/countdown.png" alt="Preview of my countdown timer website">
+                        </a>
+                        <div class="project-copy">
+                            <h3>Countdown Timer Website</h3>
+                            <p>A simple countdown timer website.</p>
+                            <a class="project-link" href="https://llames473.github.io/Countdown-timer/">Visit project ↗</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">Made by Emil Llames · Student portfolio</div>
+    </footer>
+</body>
+</html>

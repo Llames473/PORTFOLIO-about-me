@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emil Llames | About Me</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #eaf6ff;
+            color: #17314a;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .site-header {
+            padding: 14px 0;
+            background-color: #173b5b;
+            color: #f5fbff;
+            border-bottom: 3px solid #2b6187;
+        }
+
+        .nav-wrap {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+        }
+
+        .brand {
+            color: #f5fbff;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .brand span {
+            color: #b2e64c;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            margin-left: 22px;
+            color: #e0f1ff;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #c5f36b;
+        }
+
+        .page-hero {
+            padding: 60px 0 56px;
+            background: linear-gradient(120deg, #d7efff, #f2f8ff 70%, #e1f2d3);
+            border-bottom: 3px solid #b2d7e8;
+        }
+
+        .small-title {
+            margin: 0 0 8px;
+            color: #517832;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            color: #173b5b;
+            font-size: 54px;
+            line-height: 1.1;
+        }
+
+        .intro-text {
+            max-width: 680px;
+            margin: 0;
+            color: #526677;
+            font-size: 18px;
+        }
+
+        .section {
+            padding: 58px 0 66px;
+        }
+
+        .section.alt {
+            background-color: #e2f0d2;
+            border-top: 3px solid #b4d38d;
+            border-bottom: 3px solid #b4d38d;
+        }
+
+        .section-heading {
+            margin-bottom: 25px;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            color: #173b5b;
+            font-size: 36px;
+            line-height: 1.2;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-card,
+        .contact-card {
+            background-color: #ffffff;
+            border: 2px solid #b6d5e6;
+            border-radius: 4px;
+            box-shadow: 5px 5px 0 #c4dbe7;
+        }
+
+        .info-card {
+            padding: 24px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 7px 9px 0 #a9c9d9;
+        }
+
+        .info-card h3 {
+            margin: 0 0 9px;
+            color: #365e2d;
+            font-size: 21px;
+        }
+
+        .info-card p {
+            margin: 7px 0;
+            color: #526677;
+        }
+
+        .skill-list {
+            margin: 0;
+            padding-left: 21px;
+        }
+
+        .skill-list li {
+            margin-bottom: 7px;
+            color: #526677;
+        }
+
+        .contact-card {
+            padding: 28px;
+        }
+
+        .contact-card h2 {
+            margin: 0 0 8px;
+            color: #173b5b;
+            font-size: 36px;
+        }
+
+        .contact-card > p {
+            margin: 0 0 18px;
+            color: #526677;
+        }
+
+        .contact-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+        }
+
+        .contact-details p {
+            margin: 0;
+        }
+
+        .contact-details a,
+        .social-links a {
+            color: #315f8a;
+            font-weight: bold;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 18px 8px 0;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: #527d37;
+            text-decoration: underline;
+        }
+
+        footer {
+            padding: 20px 0;
+            background-color: #173b5b;
+            color: #e2f1fc;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        a:focus-visible {
+            outline: 3px solid #567c34;
+            outline-offset: 4px;
+        }
+
+        @media (max-width: 760px) {
+            .nav-wrap {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .nav-links a {
+                margin: 0 8px;
+            }
+
+            .page-hero {
+                padding: 44px 0;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .section {
+                padding: 46px 0;
+            }
+
+            .section-heading h2,
+            .contact-card h2 {
+                font-size: 30px;
+            }
+
+            .card-grid,
+            .contact-details {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-wrap container">
+            <a class="brand" href="index.html">EMIL<span>.</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#projects">Projects</a>
+                <a class="active" href="aboutme.html">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <p class="small-title">About me</p>
+                <h1>A little about Emil.</h1>
+                <p class="intro-text">I’m a BSIS student learning web development. I want to improve by practicing and making more projects.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="small-title">My background</p>
+                    <h2>Education &amp; experience</h2>
+                </div>
+
+                <div class="card-grid">
+                    <article class="info-card">
+                        <h3>Education</h3>
+                        <p><strong>Dr. Filemon C. Aguilar Memorial College of Las Piñas</strong></p>
+                        <p>BSIS · 2nd Year College</p>
+                    </article>
+
+                    <article class="info-card">
+                        <h3>Experience</h3>
+                        <p><strong>IT Assistant · 2023-2024</strong></p>
+                        <p>TESDA Office</p>
+                        <p>Saint Francis of Assisi College - Las Piñas Campus</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section alt">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="small-title">What I can do</p>
+                    <h2>My skills</h2>
+                </div>
+
+                <div class="card-grid">
+                    <article class="info-card">
+                        <h3>Technical Skills</h3>
+                        <ul class="skill-list">
+                            <li>Basic HTML</li>
+                            <li>Basic CSS</li>
+                            <li>Microsoft Word</li>
+                            <li>Microsoft Excel</li>
+                            <li>Microsoft PowerPoint</li>
+                        </ul>
+                    </article>
+
+                    <article class="info-card">
+                        <h3>Soft Skills</h3>
+                        <ul class="skill-list">
+                            <li>Teamwork</li>
+                            <li>Communication</li>
+                            <li>Time management</li>
+                            <li>Willingness to learn</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="contact-card">
+                    <p class="small-title">Contact</p>
+                    <h2>Get in touch</h2>
+                    <p>You can contact me here or find me on social media.</p>
+
+                    <div class="contact-details">
+                        <p>Email: <a href="mailto:emilllames47@gmail.com">emilllames47@gmail.com</a></p>
+                        <p>Phone: <a href="tel:+639915886499">09915886499</a></p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/Llames473">GitHub ↗</a>
+                        <a href="https://web.facebook.com/Ejay.LLames.6923">Facebook ↗</a>
+                        <a href="https://www.instagram.com/sminch723/?hl=en">Instagram ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">Made by Emil Llames · Student portfolio</div>
+    </footer>
+</body>
+</html>
